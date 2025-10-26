@@ -15,86 +15,136 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1220;
-      --muted:#94a3b8;
-      --accent:#7c3aed; /* violet */
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
-      --max-width:1100px;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg,var(--bg) 0%, #071024 100%);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:32px 16px;
-      display:flex;
-      justify-content:center;
-    }
-    .container{width:100%;max-width:var(--max-width);} 
+  :root{
+    --bg:#0f1724;
+    --card:#0b1220;
+    --muted:#94a3b8;
+    --accent:#7c3aed;
+    --glass: rgba(255,255,255,0.04);
+    --radius:14px;
+    --max-width:1100px;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg,var(--bg) 0%, #071024 100%);
+    color:#e6eef8;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+    padding:32px 16px;
+    display:flex;
+    justify-content:center;
+  }
+  .container{width:100%;max-width:var(--max-width);} 
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
-    .nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
-    .nav a:hover{color:white}
+  /* Header */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .brand{display:flex;gap:14px;align-items:center}
+  .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
+  .nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+  .nav a:hover{color:white}
+  .nav{display:flex;flex-wrap:wrap;gap:10px;}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px}
-    .hero-left{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6);}
-    .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:12px}
-    h1{margin:8px 0 6px;font-size:40px;line-height:1.02}
-    p.lead{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;gap:12px}
-    .btn{background:linear-gradient(90deg,var(--accent),#06b6d4);padding:12px 16px;border-radius:10px;color:white;font-weight:700;border:none;cursor:pointer}
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+  /* Hero */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:28px;
+    align-items:center;
+    margin-bottom:36px;
+  }
+  .hero-left{
+    padding:28px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:var(--radius);
+    box-shadow:0 6px 30px rgba(2,6,23,0.6);
+  }
+  .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:12px}
+  h1{margin:8px 0 6px;font-size:40px;line-height:1.1}
+  p.lead{color:var(--muted);margin:0 0 18px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{background:linear-gradient(90deg,var(--accent),#06b6d4);padding:12px 16px;border-radius:10px;color:white;font-weight:700;border:none;cursor:pointer;text-align:center}
+  .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
 
-    /* Profile card */
-    .profile{padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),var(--glass));display:flex;flex-direction:column;gap:16px;align-items:center}
-    .avatar{width:160px;height:160px;border-radius:16px;background:linear-gradient(135deg,#111827 0%, #0b1220 100%);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--muted)}
-    .role{color:var(--muted);font-weight:600}
-    .skills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-    .chip{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+  /* Profile card */
+  .profile{
+    padding:20px;
+    border-radius:14px;
+    background:linear-gradient(180deg,rgba(255,255,255,0.02),var(--glass));
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:center;
+  }
+  .avatar img{
+    width:160px;
+    height:160px;
+    border-radius:16px;
+    object-fit:cover;
+  }
+  .role{color:var(--muted);font-weight:600}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
 
-    /* Portfolio */
-    .section{margin-bottom:36px}
-    .section h2{margin:0 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-    .card{border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.5);display:flex;flex-direction:column}
-    .thumb{height:140px;display:flex;align-items:center;justify-content:center;font-weight:700}
-    .card .content{padding:12px}
-    .tag{font-size:12px;color:var(--muted);margin-bottom:6px}
-    .proj-title{font-weight:700;margin:0}
-    .proj-desc{color:var(--muted);font-size:13px;margin-top:6px}
+  /* Portfolio */
+  .section{margin-bottom:36px}
+  .section h2{margin:0 0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .card{border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.5);display:flex;flex-direction:column}
+  .thumb{height:140px;display:flex;align-items:center;justify-content:center;font-weight:700;overflow:hidden}
+  .card .content{padding:12px}
+  .tag{font-size:12px;color:var(--muted);margin-bottom:6px}
+  .proj-title{font-weight:700;margin:0}
+  .proj-desc{color:var(--muted);font-size:13px;margin-top:6px}
 
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    form{background:var(--card);padding:18px;border-radius:12px}
-    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    textarea{min-height:140px}
-    .social{display:flex;gap:10px;align-items:center}
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+  form{background:var(--card);padding:18px;border-radius:12px}
+  label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+  input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+  textarea{min-height:140px}
+  .social{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 
-    /* Footer */
-    footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+  /* Footer */
+  footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .contact-grid{grid-template-columns:1fr}
-      .profile{flex-direction:row;align-items:center}
-      .avatar{width:96px;height:96px}
-    }
-  </style>
+  /* Medium screens */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .profile{flex-direction:row;align-items:center;justify-content:center}
+    .avatar img{width:100px;height:100px}
+  }
+
+  /* Small screens (phones) */
+  @media (max-width:600px){
+    body{padding:20px 10px;}
+    header{flex-direction:column;align-items:flex-start;gap:8px;}
+    h1{font-size:28px;line-height:1.2;}
+    p.lead{font-size:15px;}
+    .hero-left{padding:18px;}
+    .profile{flex-direction:column;text-align:center;}
+    .avatar img{width:120px;height:120px;}
+    .nav a{margin-left:0;}
+    .cta{flex-direction:column;align-items:stretch;}
+    .btn{width:100%;text-align:center;}
+    .contact-grid{grid-template-columns:1fr;}
+    .grid{grid-template-columns:1fr;}
+    .section h2{font-size:22px;}
+  }
+</style>
+
 </head>
 <body>
   <div class="container">
@@ -118,7 +168,7 @@
         <div class="hero-left">
           <div class="eyebrow">Hi, I'm Khansa</div>
           <h1>Graphic Designer crafting bold brands &amp; playful visuals</h1>
-          <p class="lead">I build striking visual identities, illustrations, and social graphics that help small businesses and creators stand out online. I love clean typography, vibrant colors and purposeful layouts.</p>
+          <p class="lead">I create logos, illustrations, and social media designs that help small businesses and creators stand out online. I’m all about bright colors, fun layouts, and clean typography that make designs pop.</p>
           <div class="cta">
             <a class="btn" href="#contact">Work with me</a>
             <a class="btn secondary" href="#portfolio">See portfolio</a>
@@ -148,23 +198,31 @@
           <!-- Project 1 -->
           <article class="card">
             <div class="thumb" style="background:linear-gradient(135deg,#bda2eb33,#06b5d434);"><a href="c:\Users\user\OneDrive\Pictures\2.png" target="_blank">
-  <img src="c:\Users\user\OneDrive\Pictures\2.png" alt="Khansa Khan" width="150" height="150" style=; cursor: pointer;">
+  <img src="c:\Users\user\OneDrive\Pictures\2.png" alt="Khansa Khan" width="150" height="150" style="cursor: pointer;">
 </a>
 
 </div>
             <div class="content">
-              <div class="tag">click on picture to enlarge</div>
+              <div class="tag"></div>
               <h3 class="proj-title">Wedding invitations</h3>
-              <p class="proj-desc">Logo system, packaging and social templates for a boutique bakery.</p>
+              <p class="proj-desc">custom made wedding invitations.</p>
             </div>
           </article>
 
           <!-- Project 2 -->
           <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#ef444433);"><a href="images/profile.jpg" target="_blank">
-  <img src="images/profile.jpg" alt="Khansa Maryam" width="250">
+            <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#ef444433);"><!-- Two clickable images -->
+<a href="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" target="_blank">
+  <img src="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" alt="Profile Photo" width="150" height="150" style="margin: 10px; cursor: pointer;">
 </a>
-">Illustration</div>
+
+<a href="c:\Users\user\OneDrive\Pictures\2 card.png" target="_blank">
+  <img src="c:\Users\user\OneDrive\Pictures\2 card.png" alt="My Design Work" width="150s" height="150" style; 10px; margin: 10px; cursor: pointer;">
+</a>
+">
+  <>
+          </a>
+            </div>
             <div class="content">
               <div class="tag">Illustration</div>
               <h3 class="proj-title">Business cards</h3>
@@ -199,9 +257,11 @@
         <h2>About me</h2>
         <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
           <div>
-            <p style="color:var(--muted)">I’m Khansa ,I’m a beginner graphic designer who loves turning ideas into creative designs. 
-              I enjoy playing around with colors, fonts, and layouts to make things stand out and feel unique. I’m still learning and growing,
-               but I’m super excited to share my work and improve with every project. Thanks for stopping by — feel free to check out my designs and see what I’ve been working on!
+            <p style="color:var(--muted)">Hi, I’m Khansa Maryam
+I’m a graphic designer who loves creating meaningful and beautiful designs that bring ideas to life. I design wedding invitations, business cards, website banners, and social media advertisement posters — all made with care and creativity.
+
+I’m always learning new skills and exploring fresh styles to make each project unique. My goal is to help you share your story through visuals that truly stand out. 
+              Thanks for stopping by — feel free to check out my designs and see what I’ve been working on!
               </p>
             <h1 style="margin-top:24px;font-size:20px">Skills:</h1>
             <ul style="color:var(--muted);margin-top:12px">
