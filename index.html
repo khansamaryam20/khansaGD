@@ -162,7 +162,33 @@
     word-break: normal;
     white-space: normal;
   }
+}/* Desktop layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
 }
+
+/* Mobile layout fix */
+@media (max-width: 700px) {
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .about-grid p {
+    white-space: normal !important;
+    word-break: normal !important;
+    line-height: 1.6;
+  }
+
+  .about-grid aside {
+    width: 100% !important;
+  }
+}
+
 
 
 </style>
@@ -275,30 +301,38 @@
         </div>
       </section>
 
-      <section id="about" class="section">
-        <h2>About me</h2>
-        <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start">
-          <div>
-            <p style="color:var(--muted)">Hi, I’m Khansa Maryam
-I’m a graphic designer who loves creating meaningful and beautiful designs that bring ideas to life. I design wedding invitations, business cards, website banners, and social media advertisement posters — all made with care and creativity.
+     <section id="about" class="section"> 
+  <h2>About me</h2>
+  <div class="about-grid">
+    <div>
+      <p style="color:var(--muted)">
+        Hi, I’m Khansa Maryam.<br><br>
+        I’m a graphic designer who loves creating meaningful and beautiful designs that bring ideas to life. 
+        I design wedding invitations, business cards, website banners, and social media advertisement posters — 
+        all made with care and creativity.<br><br>
+        I’m always learning new skills and exploring fresh styles to make each project unique. 
+        My goal is to help you share your story through visuals that truly stand out.<br><br>
+        Thanks for stopping by — feel free to check out my designs and see what I’ve been working on!
+      </p>
 
-I’m always learning new skills and exploring fresh styles to make each project unique. My goal is to help you share your story through visuals that truly stand out. 
-              Thanks for stopping by — feel free to check out my designs and see what I’ve been working on!
-              </p>
-            <h1 style="margin-top:24px;font-size:20px">Skills:</h1>
-            <ul style="color:var(--muted);margin-top:12px">
-              <li>Canva Pro</li>
-              <li>Graphic design</li>
-              <li>Microsoft Office</li>
-              <li>Adobe</li>
-            </ul>
-          </div>
-          <aside style="background:var(--card);padding:12px;border-radius:12px">
-            <strong>Quick facts</strong>
-            <p style="color:var(--muted);margin:8px 0 0">Based in Canada • Available for freelance • Open to remote projects</p>
-          </aside>
-        </div>
-      </section>
+      <h1 style="margin-top:24px;font-size:20px">Skills:</h1>
+      <ul style="color:var(--muted);margin-top:12px">
+        <li>Canva Pro</li>
+        <li>Graphic design</li>
+        <li>Microsoft Office</li>
+        <li>Adobe</li>
+      </ul>
+    </div>
+
+    <aside style="background:var(--card);padding:12px;border-radius:12px">
+      <strong>Quick facts</strong>
+      <p style="color:var(--muted);margin:8px 0 0">
+        Based in Canada • Available for freelance • Open to remote projects
+      </p>
+    </aside>
+  </div>
+</section>
+
 
       <section id="contact" class="section">
         <h2>Contact</h2>
