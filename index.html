@@ -187,11 +187,58 @@
   .about-grid aside {
     width: 100% !important;
   }
+}/* Portfolio images */
+.thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
 }
 
+/* Multiple images inside one card */
+.thumb.multiple-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
 
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
 
+  .thumb.multiple-images {
+    grid-template-columns: 1fr; /* Stack multiple images vertically */
+  }
+}<style>
+  /* Make images and grids work on all screen sizes */
+  #portfolio img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #portfolio .thumb {
+    border-radius: 8px;
+  }
+
+  #portfolio a {
+    display: block;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    #portfolio .grid {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+    }
+  }
 </style>
+
+
+
+ </style>
 
 </head>
 <body>
@@ -239,67 +286,70 @@
         </aside>
       </section>
 
-      <section id="portfolio" class="section">
-        <h2>Selected Work</h2>
-        <div class="grid" aria-live="polite">
+      <section id="portfolio" class="section"> 
+  <h2>Selected Work</h2>
 
-          <!-- Project 1 -->
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#bda2eb33,#06b5d434);"><a href="c:\Users\user\OneDrive\Pictures\2.png" target="_blank">
-  <img src="c:\Users\user\OneDrive\Pictures\2.png" alt="Khansa Khan" width="150" height="150" style="cursor: pointer;">
-</a>
+  <div class="grid" aria-live="polite"
+       style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
 
-</div>
-            <div class="content">
-              <div class="tag"></div>
-              <h3 class="proj-title">Wedding invitations</h3>
-              <p class="proj-desc">custom made wedding invitations.</p>
-            </div>
-          </article>
+    <!-- Project 1 -->
+    <article class="card" style="background:var(--card);border-radius:12px;overflow:hidden;">
+      <div class="thumb" style="background:linear-gradient(135deg,#bda2eb33,#06b5d434);padding:12px;text-align:center;">
+        <a href="c:\Users\user\OneDrive\Pictures\2.png" target="_blank">
+          <img src="c:\Users\user\OneDrive\Pictures\2.png" alt="Wedding Invitation" style="width:100%;height:180px;border-radius:8px;cursor:pointer;">
+        </a>
+      </div>
+      <div class="content" style="padding:12px;">
+        <h3 class="proj-title">Wedding Invitations</h3>
+        <p class="proj-desc" style="color:var(--muted);">Custom made wedding invitations.</p>
+      </div>
+    </article>
 
-          <!-- Project 2 -->
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#ef444433);"><!-- Two clickable images -->
-<a href="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" target="_blank">
-  <img src="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" alt="Profile Photo" width="150" height="150" style="margin: 10px; cursor: pointer;">
-</a>
+   <!-- Project 2 --> 
+<article class="card" style="background:var(--card);border-radius:12px;overflow:hidden;">
+  <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#ef444433);display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:12px;">
+    <a href="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" target="_blank" style="flex:1 1 45%;max-width:45%;">
+      <img src="c:\Users\user\OneDrive\Pictures\1 bussiness card.png" alt="Business Card 1" style="width: 220px;;height:auto;border-radius:8px;cursor:pointer;">
+    </a>
+    <a href="c:\Users\user\OneDrive\Pictures\2 card.png" target="_blank" style="flex:1 1 45%;max-width:45%;">
+      <img src="c:\Users\user\OneDrive\Pictures\2 card.png" alt="Business Card 2" style="width: 220px;;height:auto;border-radius:8px;cursor:pointer;">
+    </a>
+  </div>
+  <div class="content" style="padding:12px;">
+    <h3 class="proj-title">Business Cards</h3>
+    <p class="proj-desc" style="color:var(--muted);">Modern designs for clients.</p>
+  </div>
+</article>
 
-<a href="c:\Users\user\OneDrive\Pictures\2 card.png" target="_blank">
-  <img src="c:\Users\user\OneDrive\Pictures\2 card.png" alt="My Design Work" width="150s" height="150" style; 10px; margin: 10px; cursor: pointer;">
-</a>
 
-  
-          </a>
-            </div>
-            <div class="content">
-              <div class="tag">Illustration</div>
-              <h3 class="proj-title">Business cards</h3>
-              <p class="proj-desc">Poster series inspired by modern city architecture and color blocking.</p>
-            </div>
-          </article>
+    <!-- Project 3 -->
+    <article class="card" style="background:var(--card);border-radius:12px;overflow:hidden;">
+      <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#7c3aed33);padding:12px;text-align:center;">
+        <a href="images/website-banner.png" target="_blank">
+          <img src="images/website-banner.png" alt="Website Banner" style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
+        </a>
+      </div>
+      <div class="content" style="padding:12px;">
+        <h3 class="proj-title">Website Banners</h3>
+        <p class="proj-desc" style="color:var(--muted);">A cohesive set for social media and web.</p>
+      </div>
+    </article>
 
-          <!-- Project 3 -->
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#06b6d433,#7c3aed33);">Social</div>
-            <div class="content">
-              <div class="tag">Social Graphics</div>
-              <h3 class="proj-title">Website banners</h3>
-              <p class="proj-desc">A cohesive Instagram set to boost engagement for a wellness brand.</p>
-            </div>
-          </article>
+    <!-- Project 4 -->
+    <article class="card" style="background:var(--card);border-radius:12px;overflow:hidden;">
+      <div class="thumb" style="background:linear-gradient(135deg,#ef444433,#7c3aed33);padding:12px;text-align:center;">
+        <a href="images/business-poster.png" target="_blank">
+          <img src="images/business-poster.png" alt="Business Poster Advertisement" style="width:100%;height:auto;border-radius:8px;cursor:pointer;">
+        </a>
+      </div>
+      <div class="content" style="padding:12px;">
+        <h3 class="proj-title">Business Poster Advertisement</h3>
+        <p class="proj-desc" style="color:var(--muted);">Flyers, banners, and schedules for a local creative festival.</p>
+      </div>
+    </article>
 
-          <!-- Project 4 -->
-          <article class="card">
-            <div class="thumb" style="background:linear-gradient(135deg,#ef444433,#7c3aed33);">Print</div>
-            <div class="content">
-              <div class="tag">Print</div>
-              <h3 class="proj-title">Business poster advertisement</h3>
-              <p class="proj-desc">Flyers, banners and schedules for a local creative festival.</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
+  </div>
+</section>
 
      <section id="about" class="section"> 
   <h2>About me</h2>
