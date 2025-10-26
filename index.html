@@ -146,12 +146,23 @@
   max-width: 100%;
   height: auto;
   display: block;
+}/* Fix About Me layout on mobile */
+@media (max-width: 700px) {
+  #about div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  #about aside {
+    width: 100% !important;
+  }
+  #about p {
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: normal;
+    white-space: normal;
+  }
 }
-
-section, div, figure {
-  overflow: visible !important;
-}
-
 
 
 </style>
