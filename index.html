@@ -141,8 +141,28 @@
     .btn{width:100%;text-align:center;}
     .contact-grid{grid-template-columns:1fr;}
     .grid{grid-template-columns:1fr;}
-    .section h2{font-size:22px;}
+    .section h2{font-size:22px;}/* Fix for About section on mobile */
+@media (max-width: 700px) {
+  #about div[style*="display:grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
   }
+  #about aside {
+    width: 100% !important;
+  }
+  #about p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+  }img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 </style>
 
 </head>
